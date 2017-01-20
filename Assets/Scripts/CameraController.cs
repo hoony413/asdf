@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
     readonly string png = ".png";
     readonly string DCIM = "/mnt/sdcard/DCIM/Camera/";
     readonly string filePath = "C:/Certpia/";
-    readonly string fileName = "Picture_";
+    readonly string fileName = "_picture_";
     //Quaternion rotation = Quaternion.Euler(0, 0, 90);
 
     WebCamDevice[] device;
@@ -96,11 +96,6 @@ public class CameraController : MonoBehaviour
         mt.mainTexture = cam;
     }
 	
-	void FixedUpdate ()
-    {
-
-    }
-
     static int takeCount = 0;
     public void TakePicture()
     {
@@ -111,23 +106,23 @@ public class CameraController : MonoBehaviour
         tex.Apply();
 
         sb.Length = 0;
-//#if UNITY_EDITOR
-//        sb.Append(filePath);
-//#elif UNITY_ANDROID
+#if UNITY_EDITOR
+        sb.Append(filePath);
+#elif UNITY_ANDROID
         sb.Append("/mnt/sdcard/Android/data/com.MyFirst.Camme/files/DCIM/Camera");
-//#endif
+#endif
+        /*
         if (!System.IO.Directory.Exists(sb.ToString()))
             System.IO.Directory.CreateDirectory(sb.ToString());
+        */
 
         byte[] bytes = tex.EncodeToPNG();
-        System.IO.File.WriteAllBytes("pic_" + takeCount.ToString() + ".jpg", bytes);
+        System.IO.File.WriteAllBytes(Application.persistentDataPath + fileName + takeCount.ToString() + png, bytes);
     
-        /*
         Texture2DToAndroidBitmap(tex);
         SaveImageToGallery(tex, "abc", "def");
-        */
+        
         takeCount++;
-        //cam.Play();
         sb.Length = 0;
     }
 

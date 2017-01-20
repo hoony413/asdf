@@ -210,6 +210,11 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\res\values-v14\styles.xml" />
+    <None Include="Assets\Plugins\Android\res\values-v21\styles.xml" />
+    <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\res\values\styles.xml" />
     <None Include="Assets\Resources\Shaders\UI_ETC 1.shader" />
     <None Include="Assets\Resources\Shaders\UI_ETC 2.shader" />
     <None Include="Assets\Resources\Shaders\UI_ETC 3.shader" />
