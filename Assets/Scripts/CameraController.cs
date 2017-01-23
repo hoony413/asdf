@@ -99,7 +99,7 @@ public class CameraController : MonoBehaviour
     static int takeCount = 0;
     public void TakePicture()
     {
-        StartCoroutine(CorNextFrame());
+        StartCoroutine(WaitNextFrame());
 
         Texture2D tex = new Texture2D(cam.width, cam.height);
         tex.SetPixels(cam.GetPixels());
@@ -109,24 +109,15 @@ public class CameraController : MonoBehaviour
 #if UNITY_EDITOR
         sb.Append(filePath);
 #elif UNITY_ANDROID
-        sb.Append("/mnt/sdcard/Android/data/com.MyFirst.Camme/files/DCIM/Camera");
+        sb.Append(DCIM);
 #endif
-        /*
-        if (!System.IO.Directory.Exists(sb.ToString()))
-            System.IO.Directory.CreateDirectory(sb.ToString());
-        */
-
         byte[] bytes = tex.EncodeToPNG();
-        System.IO.File.WriteAllBytes(Application.persistentDataPath + fileName + takeCount.ToString() + png, bytes);
-    
-        Texture2DToAndroidBitmap(tex);
-        SaveImageToGallery(tex, "abc", "def");
-        
+        SaveImageToGallery(tex, Application.persistentDataPath + takeCount.ToString() + png, "");
         takeCount++;
         sb.Length = 0;
     }
 
-    IEnumerator CorNextFrame()
+    IEnumerator WaitNextFrame()
     {
         yield return new WaitForEndOfFrame();
     }
