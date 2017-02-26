@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>5.3.5f1</UnityVersion>
+    <UnityVersion>5.3.5p8</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
@@ -209,6 +209,7 @@
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\HistogramRender.shader" />
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.shader" />
+    <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\UIFrameWork\Editor\NGUITool\ReadMe.txt" />
     <None Include="Assets\UITexture\UIAtlas\UILoading.txt" />
     <None Include="Assets\UITexture\UIAtlas\UILogin.txt" />

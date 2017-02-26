@@ -23,19 +23,19 @@ public class FilterPool : MonoBehaviour
         MAX
     }
 
-    UnityStandardAssets.ImageEffects.BloomOptimized bloomObtimized;
-    UnityStandardAssets.ImageEffects.BlurOptimized blurOptimized;
-    UnityStandardAssets.ImageEffects.ColorCorrectionCurves colorCorrectionCurves;
-    UnityStandardAssets.ImageEffects.ContrastEnhance contrastEnhance;
-    UnityStandardAssets.ImageEffects.CreaseShading creaseShading;
-    UnityStandardAssets.ImageEffects.DepthOfField depthOfField;
-    UnityStandardAssets.ImageEffects.EdgeDetection edgeDetection;
-    UnityStandardAssets.ImageEffects.Fisheye fishEye;
-    UnityStandardAssets.ImageEffects.Grayscale grayScale;
-    UnityStandardAssets.ImageEffects.SepiaTone sepiaTone;
-    UnityStandardAssets.ImageEffects.TiltShift tiltShift;
-    UnityStandardAssets.ImageEffects.Tonemapping toneMapping;
-    UnityStandardAssets.ImageEffects.VignetteAndChromaticAberration vignetteAndChromaticAberration;
+    private UnityStandardAssets.ImageEffects.BloomOptimized bloomObtimized;
+    private UnityStandardAssets.ImageEffects.BlurOptimized blurOptimized;
+    private UnityStandardAssets.ImageEffects.ColorCorrectionCurves colorCorrectionCurves;
+    private UnityStandardAssets.ImageEffects.ContrastEnhance contrastEnhance;
+    private UnityStandardAssets.ImageEffects.CreaseShading creaseShading;
+    private UnityStandardAssets.ImageEffects.DepthOfField depthOfField;
+    private UnityStandardAssets.ImageEffects.EdgeDetection edgeDetection;
+    private UnityStandardAssets.ImageEffects.Fisheye fishEye;
+    private UnityStandardAssets.ImageEffects.Grayscale grayScale;
+    private UnityStandardAssets.ImageEffects.SepiaTone sepiaTone;
+    private UnityStandardAssets.ImageEffects.TiltShift tiltShift;
+    private UnityStandardAssets.ImageEffects.Tonemapping toneMapping;
+    private UnityStandardAssets.ImageEffects.VignetteAndChromaticAberration vignetteAndChromaticAberration;
 
     public void SetUp()
     {

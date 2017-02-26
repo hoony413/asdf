@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>5.3.5f1</UnityVersion>
+    <UnityVersion>5.3.5p8</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
@@ -218,10 +218,21 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\FilterPool.cs" />
-    <Compile Include="Assets\Scripts\Preset.cs" />
-    <Compile Include="Assets\Scripts\_DefaultPreset.cs" />
-    <Compile Include="Assets\Scripts\_GrayScale.cs" />
-    <Compile Include="Assets\Scripts\_SepiaTone.cs" />
+    <Compile Include="Assets\Scripts\Preset\Preset.cs" />
+    <Compile Include="Assets\Scripts\Preset\_Bloom.cs" />
+    <Compile Include="Assets\Scripts\Preset\_Blur.cs" />
+    <Compile Include="Assets\Scripts\Preset\_ColorCorrectionsCurve.cs" />
+    <Compile Include="Assets\Scripts\Preset\_ConstrastEnhance.cs" />
+    <Compile Include="Assets\Scripts\Preset\_CreaseShading.cs" />
+    <Compile Include="Assets\Scripts\Preset\_DefaultPreset.cs" />
+    <Compile Include="Assets\Scripts\Preset\_DepthOfField.cs" />
+    <Compile Include="Assets\Scripts\Preset\_EdgeDetection.cs" />
+    <Compile Include="Assets\Scripts\Preset\_Fisheye.cs" />
+    <Compile Include="Assets\Scripts\Preset\_GrayScale.cs" />
+    <Compile Include="Assets\Scripts\Preset\_SepiaTone.cs" />
+    <Compile Include="Assets\Scripts\Preset\_TiltShift.cs" />
+    <Compile Include="Assets\Scripts\Preset\_ToneMapping.cs" />
+    <Compile Include="Assets\Scripts\Preset\_VignetteAndChromaticAberration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImageEffects\NewImageEffects\Tonemapping\TonemapperLog.shader" />
@@ -353,6 +364,7 @@
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\HistogramRender.shader" />
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
     <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.shader" />
+    <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\UIFrameWork\Editor\NGUITool\ReadMe.txt" />
     <None Include="Assets\UITexture\UIAtlas\UILoading.txt" />
     <None Include="Assets\UITexture\UIAtlas\UILogin.txt" />
