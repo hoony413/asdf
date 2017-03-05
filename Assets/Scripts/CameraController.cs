@@ -81,25 +81,26 @@ public class CameraController : MonoBehaviour
     public Material mt;
     void Start ()
     {
-        int iMaxSize = Mathf.Max(Screen.width, Screen.height);
-        int iMinSize = Mathf.Min(Screen.width, Screen.height);
+        Resolution res = Screen.currentResolution;
+
+        int iMaxSize = Mathf.Max(res.width, res.height);
+        int iMinSize = Mathf.Min(res.width, res.height);
 
         float fRatio = (float)(iMaxSize) / (float)(iMinSize);
 
-        Plane.localScale = new Vector3(1f * fRatio, 1f, 1f);
-
-        Resolution res = Screen.currentResolution;
-        cam = new WebCamTexture(iMinSize, iMaxSize, res.refreshRate);
-        Screen.SetResolution(iMinSize, iMaxSize, true, 60);
+        //Plane.localScale = new Vector3(1f, 1f, 1f * fRatio);
+        cam = new WebCamTexture(1024, 1024, res.refreshRate);
 
         device = WebCamTexture.devices;
         if (device.Length > 0)
         {
             cam.deviceName = device[cameraIndex].name;
+            vSavedRot = Plane.transform.localEulerAngles;
             cam.Play();
         }
         
         mt.mainTexture = cam;
+        LbLog.text = Preset.currentIndex.ToString();
     }
 
     public void TakePicture()
@@ -111,6 +112,9 @@ public class CameraController : MonoBehaviour
     {
         yield return new WaitForFixedUpdate();
 
+        if (cam == null)
+            yield break;
+
         Texture2D tex = new Texture2D(cam.width, cam.height);
         tex.SetPixels(cam.GetPixels());
         tex.Apply();
@@ -120,26 +124,42 @@ public class CameraController : MonoBehaviour
     }
 
     int cameraIndex;
+    Vector3 vSavedRot = new Vector3();
     public void SwitchCamera()
     {
+       if (cam == null)
+           return;
+
         cam.Stop();
+
+        int backup = cameraIndex;
+
         if (cameraIndex == 0)
             cameraIndex = 1;
         else if (cameraIndex == 1)
             cameraIndex = 0;
 
-        if (cameraIndex <= device.Length)
+        if (cameraIndex >= device.Length)
         {
+            cameraIndex = backup;
             cam.Play();
             return;
         }
 
         cam.deviceName = device[cameraIndex].name;
+
+        if (device[cameraIndex].isFrontFacing == true)
+            vSavedRot.x = 180f;
+        else
+            vSavedRot.x = 0f;
+
+        Plane.transform.localEulerAngles = vSavedRot;
         cam.Play();
     }
 
     public void Drag()
     {
+        
     }
 
     public void ChangePreset()
